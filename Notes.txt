@@ -1,4 +1,8 @@
-#notes
+
+Coding Pratise : https://interviewprep.techieey.com/leaderboard
+
+
+
 React JS - Library
            Not have the all the features , so need to install based on the Requirement
            Forexample - Router is not in build function in React js. so need to install	
@@ -18,7 +22,11 @@ Next JS  - Frame work
            we write the both frontend and Backend code in same place.
 		   Main advantage is we will deside which component CSR need and Which component need SSR. 
 		   Network Boundary us 
-		    Notes : Next js same to PHP. Because PHP worked on the  UI and Backend also. this same idea was used to next js	   
+		    Notes : Next js same to PHP. Because PHP worked on the  UI and Backend also. this same idea was used to next js
+			
+			
+		   	
+		   
 		  
 		  
 CSR vs SSR:
@@ -33,5 +41,183 @@ CSR vs SSR:
 		   all the content rendered same time
 		   security high.
 		   Create payment gateway page in SSR - because more secure
+	
+-----------------------------------------------------------------------------------------------------------------------
+
+	Create create Next js app:
+	>npx create-next-app@latest
+	
+	next asked some questions:
+	 1.Projecct Name?
+	 2.use Typescript ?
+	 3.use EsLint ?
+	 4.TailwindCss
+	 5.src/directory?
+	 6.app router?
+	 7.import alias?
+	 
+	 
+	Start next app:
+	  npm run dev
+	  
+Next js support the nodejs 18.17 after
+
+  so use below comment
+    >nvm use 18.17.0
+	
+	>nvm install 20.0.1
+	
+	>nvm ls-remote  -- check the version list -nvm
+	
+	
+	>nvm install v20.17.0
+	
+	--next js used file based Routing
+	
+
+Two ways of file structure 
+    1.create file structure using src folder
+	2.without src folder
+	
+jsconfig.js	
+   some configurations avaliable for import file 
+    with src      :  paths : {"@/* : ["./*"]  }
+	without src   :  paths : {"@/* : ["./src/*"]  }
+
+ Layout.js
+     outer contaier file pages
+	 for example need to add nav to all the files then add the nav is layout.js enough
+	 
+	 --Note : 
+	   suppose you have five pages , you want to add separate nav design for 2 pages. that is possible using layout files
+	   
+	   
+--------------------------------------------------------
+
+
+Font Useage:
+
+  in layout.js changes
+  create fotn.js
+  
+   import { Montserrat, Oswald } from "next/font/google";
+export const montserrat Montserrat({
+subsets: ["latin"],
+display: "swap",
+weight: ["300", "400", "600", "800"],
+});
+export const oswald = Oswald({
+subsets: ["latin"],
+display: "swap",
+weight: ["200", "300", "400", "700"],
+});  
+	 
+-----------
+
+Home.js
+import { oswald } from "./fonts";
+export default function Home() {
+return (
+<div className={styles.page}>
+<h1 className=Coswald.className)>Hello world</h1>
+<main className={styles.main}>	 
+
+
+meta and tile changes
+ 
+  og - meta tag
+  
+  twitter  - twitter tag
+  
+  page.js
+
+
+  export const metadata = () => {
+return {
+title: "Home Page Dynamic",
+description: "Home page for my next seriess",
+openGraph: {
+title: "For Social Media dynamic",
+description: "My self Desc",
+images: ["https://sdf.com/sdf.jpeg"],
+},
+};
+};
+
+  
+  export const generateMetadata = () => {
+return {
+title: "Home Page Dynamic",
+description: "Home page for my next seriess",
+openGraph: {
+title: "For Social Media dynamic",
+description: "My self Desc",
+images: ["https://sdf.com/sdf.jpeg"],
+},
+};
+};
+
+---------------------------------------------------------------------------------------
+
+SSR / Server side compoents  vs CSR /client side components
+
+
+SSR : rendered and Server and send to Browser (delviered to Browser)
+
+CSR :  React cmponents 
+
+
+In Default in next js - Server side rendered
+
+Server side Render adv :
+
+  1. Streming  
+      For example rendered from server - not need to render all the data in browser in same time. strem to small chunks files streaming in render
+	  next data come then again rendering using streming
+  2. Post paint timing 
+       Large content paining (LCP)
+	   facing some complicated when we have more datas or content  for rendering 
+	   so all the content rendered in server and send to browser	   
+	   
+  3. SEO:
+  
+      East to implement SEO in server side. because all the contents initialy loaded in server side and send to Browser. so all the pages are active
+        
+
+CSR Adv :
+
+  1. React hooks ,dom manipulation,Event Listener are not supported in SSR
+   if you implement the above in Next js - we will get the error. because Next js default is SSR. 
+   if you implemtnt the CSR in next js then 
+       'use client ' add to component file in first line
+    Client side storage - local storage,session storage are     using only CSR
+   
+	
+ RSC payload (React server component payload):
+ 
+      how is working rendering SSR :
+                     using RSPC
+					 
+	  Data + client JS instruction = server -> html (that is used for get the next js server component data and JS instruction 
+	                                                 rendered HTML format in server 
+													  next send to browser and maintain page is intractive)
+													  
+   Notes : 
+   
+       In Next js we want to Analysis the which code is CSR and SSR
+	   for example : first deside the CSR need in server
+	   syntax for CSR in next js "use client" write in top of page.
+	   
+----------------------------------------------------------------------------------------------------------
+
+
+ Global CSS
+ Module CSS
+ 
+ 
+
+
+
+
 	
 	
