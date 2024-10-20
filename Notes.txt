@@ -1,1 +1,37 @@
 #notes
+React JS - Library
+           Not have the all the features , so need to install based on the Requirement
+           Forexample - Router is not in build function in React js. so need to install	
+           only support the Client side library
+
+        		   
+
+Next JS  - Frame work
+           --all the features are already in build in Framework - all th
+		   Support the Server side Render and client side Render
+		   Next js developed used the React Core
+		   React js Framework
+		   we can use all the React features same to React js
+		   Components,Redux,context all the features also supported in Next JS
+		   Some of features also not done in React js . so this features also we will implement in Next JS. That is maxt in d/w b/w react js and nextjs
+		   It is have also backend Support. 
+           we write the both frontend and Backend code in same place.
+		   Main advantage is we will deside which component CSR need and Which component need SSR. 
+		   Network Boundary us 
+		    Notes : Next js same to PHP. Because PHP worked on the  UI and Backend also. this same idea was used to next js	   
+		  
+		  
+CSR vs SSR:
+
+    CSR :  UI code loaded in Browser  - React JS is one of the client side Render
+	       Loading time very fast if using CSR
+		   example : Youtube using client side rendering
+		   Security low
+
+    SSR	:  all the UI rendered to Server and send to UI side
+	       taking some more time for loading
+		   all the content rendered same time
+		   security high.
+		   Create payment gateway page in SSR - because more secure
+	
+	
